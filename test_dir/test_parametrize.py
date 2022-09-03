@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 @author:  虫师
 @data: 2019-10-17
@@ -22,8 +23,8 @@ from page.baidu_page import BaiduPage
      ],
     ids=["case1", "case2", "case3"]
 )
-def test_baidu_search(name, search_key, browser, base_url):
-    """百度搜索参数化"""
+def test_baidu_search_parametrized_list(name, search_key, browser, base_url):
+    """百度搜索用list解析参数化"""
     page = BaiduPage(browser)
     page.get(base_url)
     page.search_input = search_key
@@ -50,7 +51,8 @@ def get_data(file_path):
     "name, search_key",
     get_data(base_path + "/test_dir/data/data_file.json")
 )
-def test_baidu_search(name, search_key, browser, base_url):
+def test_baidu_search_parametrized_json_file(name, search_key, browser, base_url):
+    """百度搜索用加载json文件的方式参数化"""
     page = BaiduPage(browser)
     page.get(base_url)
     page.search_input = search_key
